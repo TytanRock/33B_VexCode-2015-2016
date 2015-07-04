@@ -26,3 +26,8 @@ int PID(int current, int desired, int pGain, int iGain, int dGain, int safety){
 
 	return pCurrent + iCurrent + dCurrent;
 }
+
+
+int disToSpeed(int distance){
+	return distance * DISPEEDRATIO;
+}
