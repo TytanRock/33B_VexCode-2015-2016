@@ -10,7 +10,9 @@
 #include "Main.c"
 
 task main(){
+	makeValues(0,0,0);
 	while(1){
+		profileV(0,0,0);
 		mainDrive();
 	}
 }

@@ -2,6 +2,7 @@
 #include "Main.h"
 #include "Drive.c"
 #include "Accessory.c"
+#include "MotionProfiling.c"
 
 void mainDrive (){
 	cheesyDrive();
