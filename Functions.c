@@ -1,6 +1,3 @@
-#include "Functions.h"
-
-
 int PID(int current, int desired, int pGain, int iGain, int dGain, int safety){
 	int pCurrent;
 	int iCurrent;

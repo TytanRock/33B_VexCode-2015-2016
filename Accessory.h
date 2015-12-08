@@ -3,7 +3,7 @@
 #define OTHERFUNCTIONS_H
 
 
-#define LAUNCHER(value) motor(shooter) = (value)
+#define LAUNCHER(value) motor(shooter1) = motor (shooter2) = (value)
 #define INTAKE(value) motor(intake1) = motor(intake2) = (value)
 
 

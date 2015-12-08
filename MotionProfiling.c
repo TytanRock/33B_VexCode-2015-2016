@@ -1,16 +1,14 @@
-#include "MotionProfiling.h"
 //USE THIS FOR INITIALIZATION///////////////
 void makeValues(int target, int accel, int tSpeed){
-	int accelDistance = (tSpeed * 0.01) / (accel * 0.0001);
+	int accelDistance = (tSpeed * tSpeed * 2)/(accel);
 
-	if((accelDistance * tSpeed * 2) > target){
-		accelDistance = target;
+	if((accelDistance * 2) > target){
+		accelDistance = target / 2;
 	}
 
-	accelTime = (accelDistance / accel) / (accelDistance / accel);
+	accelTime = (tSpeed / accel);
 
-	cruiseTime = (target - accelDistance) / tSpeed;
-
+	cruiseTime = (target - (accelDistance * 2)) / tSpeed;
 
 }
 ////////////////////////////////////////////

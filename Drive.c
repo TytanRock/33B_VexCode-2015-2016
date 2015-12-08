@@ -1,10 +1,12 @@
-#include "Drive.h"
-
-int wheel;
-int throttle;
-int leftSide;
-int rightSide;
-bool quickTurn = false;
+int limit_motor(int value){
+	if(value > 127){
+		value = 127;
+	}
+	if(value < -127){
+		value = -127;
+	}
+	return value;
+}
 
 void cheesyDrive(){
 	wheel = vexRT(Ch1);
