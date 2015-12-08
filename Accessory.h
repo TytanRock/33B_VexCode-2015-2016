@@ -2,12 +2,11 @@
 
 #define OTHERFUNCTIONS_H
 
+void collector(bool suck, bool blow);
+void shooter(bool full, bool offF);
 
-#define LAUNCHER(value) motor(shooter1) = motor (shooter2) = (value)
-#define INTAKE(value) motor(intake1) = motor(intake2) = (value)
+int shooterSpeed;
 
-
-void otherFunctions(bool suck, bool blow, bool shoot);
-
+int collectorSpeed;
 
 #endif

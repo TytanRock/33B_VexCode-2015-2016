@@ -9,22 +9,21 @@ int limit_motor(int value){
 }
 
 void cheesyDrive(){
-	wheel = vexRT(Ch1);
-	throttle = vexRT(Ch3);
-	quickTurn = checkForQuick(wheel);
-	if(quickTurn) wheel *= QUICKVAL;
+	int wheel;
+	int throttle;
+	bool quickTurn = false;
+	wheel = vexRT(Ch1);		//set right axis on joystick equal to wheel
+	throttle = vexRT(Ch3);//set left axis on joystick equal to throttle
+	if(abs(wheel) > QUICKSENS) quickTurn = true;	//if I'm beyond a certain point on my axis, enable quickturn
+	if(quickTurn) wheel *= QUICKVAL;	//If i'm in quickturn, turn a lot faster than normal
 	else{
-		float newThrottle = throttle / 127;
+		float newThrottle = throttle / 127;		//If I'm not in quickturn turn a little bit slower for control
 		wheel = newThrottle * SPEEDVAL * wheel;
 	}
 
-	leftSide = throttle - wheel;
+	leftSide = throttle - wheel;	//Enable arcade drive with the new values of wheel and throttle
 	rightSide = throttle + wheel;
 
-	leftSide = limit_motor(leftSide);
-
+	leftSide = limit_motor(leftSide);	//Limit both motors in case they're beyond 127
 	rightSide = limit_motor(rightSide);
-
-	LEFT_SIDE(leftSide);
-	RIGHT_SIDE(rightSide);
 }
