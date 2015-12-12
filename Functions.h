@@ -5,7 +5,7 @@
 
 #define DISPEEDRATIO 1.5
 
-int PID(int current, int desired, int pGain, int iGain, int dGain, int safety);
+int PID(int current, int desired, float pGain, float iGain, float dGain, float safety);
 
 int disToSpeed(int distance);
 

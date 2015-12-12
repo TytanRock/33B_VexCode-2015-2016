@@ -21,8 +21,8 @@ void cheesyDrive(){
 		wheel = newThrottle * SPEEDVAL * wheel;
 	}
 
-	leftSide = throttle - wheel;	//Enable arcade drive with the new values of wheel and throttle
-	rightSide = throttle + wheel;
+	leftSide = throttle + wheel;	//Enable arcade drive with the new values of wheel and throttle
+	rightSide = throttle - wheel;
 
 	leftSide = limit_motor(leftSide);	//Limit both motors in case they're beyond 127
 	rightSide = limit_motor(rightSide);

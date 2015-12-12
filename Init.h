@@ -6,4 +6,6 @@
 #define LEFT_SIDE(value) motor(left) = (value)											//Our left side, 1 motor
 #define RIGHT_SIDE(value) motor(right) = (value)										//Our right side, 1 motor
 
+void init();
+
 #endif
