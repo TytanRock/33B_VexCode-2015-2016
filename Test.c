@@ -29,7 +29,7 @@ task main(){
 		//HMI
 		cheesyDrive();
 		collector(vexRT[Btn5U], vexRT[Btn5D]);
-		shooter(vexRT[Btn8U], vexRT[Btn8D]);
+		shooter(vexRT[Btn8D], vexRT[Btn8U]);
 		//Control
 		//Output
 		out();
