@@ -9,5 +9,8 @@ int PID(int current, int desired, float pGain, float iGain, float dGain, float s
 
 int disToSpeed(int distance);
 
+int shooterRamp(int power);
+
+int current = 0;
 
 #endif

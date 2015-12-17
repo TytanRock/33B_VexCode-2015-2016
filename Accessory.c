@@ -24,4 +24,6 @@ void shooter(bool full, bool offF, bool half){
 			shooterSpeed = shooterSpeed;
 			break;
 	}
+
+	speed = shooterRamp(speed);
 }

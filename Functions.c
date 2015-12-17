@@ -28,3 +28,11 @@ int PID(int current, int desired, float pGain, float iGain, float dGain, float s
 int disToSpeed(int distance){
 	return distance * DISPEEDRATIO;
 }
+
+int shooterRamp(int power){
+	if(current < power) current += 10;
+	else if(current > power) current -= 10;
+	else current = current;
+	if(abs(current) - power < 11) current = power;
+	return current;
+}
