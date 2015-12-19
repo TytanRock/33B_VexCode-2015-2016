@@ -22,12 +22,14 @@
 #include "Drive.h"
 #include "Accessory.h"
 #include "MotionProfiling.h"
+#include "Auton.h"
 #include "Output.h"
 #include "Init.c"
 #include "Functions.c"
 #include "Drive.c"
 #include "Accessory.c"
 #include "MotionProfiling.c"
+#include "Auton.c"
 #include "Output.c"
 
 
@@ -63,8 +65,7 @@ task autonomous()
   // .....................................................................................
   // Insert user code here.
   // .....................................................................................
-
-	AutonomousCodePlaceholderForTesting();  // Remove this function call once you have "real" code.
+	auton();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -84,8 +85,10 @@ task usercontrol()
 	{
 	  cheesyDrive();
 	  collector(vexRT[Btn5U], vexRT[Btn5D]);
-	  shooter(vexRT[Btn8D], vexRT[Btn8U], vexRT[Btn8R]);
+	  shooter(vexRT[Btn8D], vexRT[Btn8U], vexRT[Btn8R], vexRT[Btn8L]);
 
 	  out();
+
+	  wait1Msec(25);
 	}
 }

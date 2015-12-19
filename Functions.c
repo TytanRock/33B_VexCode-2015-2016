@@ -30,9 +30,11 @@ int disToSpeed(int distance){
 }
 
 int shooterRamp(int power){
-	if(current < power) current += 10;
-	else if(current > power) current -= 10;
+	if(current < power) current += STEP;
+	else if(current > power) current -= STEP;
 	else current = current;
-	if(abs(current) - power < 11) current = power;
+
+	if(abs(current - power) < STEP) current = power;
+
 	return current;
 }

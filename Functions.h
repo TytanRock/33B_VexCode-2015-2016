@@ -5,12 +5,14 @@
 
 #define DISPEEDRATIO 1.5
 
+#define STEP 1
+
 int PID(int current, int desired, float pGain, float iGain, float dGain, float safety);
 
 int disToSpeed(int distance);
 
 int shooterRamp(int power);
 
-int current = 0;
+float current = 0;
 
 #endif

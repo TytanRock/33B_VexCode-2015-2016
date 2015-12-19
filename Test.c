@@ -12,27 +12,30 @@
 #include "Functions.h"
 #include "Drive.h"
 #include "Accessory.h"
-#include "MotionProfiling.h"
+#include "Auton.h"
 #include "Output.h"
 #include "Init.c"
 #include "Functions.c"
 #include "Drive.c"
 #include "Accessory.c"
-#include "MotionProfiling.c"
+#include "Auton.c"
 #include "Output.c"
 
 task main(){
 	//initialization
 	//makeValues(2000,30,127);
 	init();
+	autonRobot();
 	while(1){
 		//HMI
 		cheesyDrive();
 		collector(vexRT[Btn5U], vexRT[Btn5D]);
-		shooter(vexRT[Btn8D], vexRT[Btn8U], vexRT[Btn8R]);
+		shooter(vexRT[Btn8D], vexRT[Btn8U], vexRT[Btn8R], vexRT[Btn8L]);
 		//Control
 		//Output
 		out();
 
+		//motor[shooter1] = shooterRamp(127);
+		wait1Msec(25);
 	}
 }
